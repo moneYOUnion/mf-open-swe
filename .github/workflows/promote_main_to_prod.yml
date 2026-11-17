@@ -1,4 +1,4 @@
-name: Promote main to prod
+name: Promote master to prod
 
 permissions:
   contents: write
@@ -18,8 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: main
+          ref: master
           fetch-depth: 0
-      - name: Force-push main to prod
+      - name: Force-push master to prod
         run: |
           git push --force origin HEAD:refs/heads/prod
